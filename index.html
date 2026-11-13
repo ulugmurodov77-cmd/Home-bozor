@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HomeEstate | Premium Uy-joy bozori</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+ <a class="logo" href="#">HOME<span>ESTATE</span><small>REAL ESTATE PLATFORM</small></a>
+ <nav>
+  <a href="#home">Bosh sahifa</a>
+  <a href="#properties">Ko'chmas mulk</a>
+  <a href="#about">Biz haqimizda</a>
+  <a href="#contact">Aloqa</a>
+ </nav>
+ <button class="primary-btn" onclick="openModal()">+ E'lon berish</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-content">
+  <span class="eyebrow">O'ZBEKISTONNING YANGI UY-JOY BOZORI</span>
+  <h1>Orzuingizdagi uy<br><span>shu yerdan boshlanadi.</span></h1>
+  <p>Sotib olish, sotish va ijaraga olish — barchasi bir joyda.</p>
+  <div class="search">
+   <div><label>Shahar</label><select id="city"><option value="">Barcha shaharlar</option><option>Toshkent</option><option>Samarqand</option><option>Buxoro</option><option>Farg'ona</option><option>Andijon</option></select></div>
+   <div><label>Mulk turi</label><select id="type"><option value="">Barcha turlar</option><option>Kvartira</option><option>Hovli</option><option>Kottej</option></select></div>
+   <div><label>Maksimal narx</label><select id="maxPrice"><option value="">Cheklanmagan</option><option value="500000000">500 mln</option><option value="1000000000">1 mlrd</option><option value="2000000000">2 mlrd</option></select></div>
+   <button onclick="searchHomes()">Qidirish ↗</button>
+  </div>
+  <div class="stats"><div><b>1,200+</b><span>Uy-joy e'lonlari</span></div><div><b>15+</b><span>Shaharlar</span></div><div><b>24/7</b><span>Qo'llab-quvvatlash</span></div></div>
+ </div>
+</section>
+
+<section class="section" id="properties">
+ <div class="section-heading">
+  <div><span class="eyebrow">SIZ UCHUN TANLANDI</span><h2>Eng yaxshi takliflar</h2><p>Orzuingizdagi manzilni bugun toping.</p></div>
+  <button class="outline-btn" onclick="showAll()">Barchasini ko'rish ↗</button>
+ </div>
+ <div class="filters">
+  <button class="filter active" onclick="category('Barchasi',this)">Barchasi</button>
+  <button class="filter" onclick="category('Kvartira',this)">Kvartiralar</button>
+  <button class="filter" onclick="category('Hovli',this)">Hovlilar</button>
+  <button class="filter" onclick="category('Kottej',this)">Kottejlar</button>
+ </div>
+ <div class="grid" id="grid"></div>
+</section>
+
+<section class="about" id="about">
+ <div><span class="eyebrow">HOMEESTATE IMKONIYATLARI</span><h2>Yangi uyingizga<br>bir qadam yaqinroq.</h2><p>Ko'chmas mulk qidirish va sotishning yangi zamonaviy usuli.</p><button class="primary-btn" onclick="openModal()">E'lon joylashtirish ↗</button></div>
+ <div class="big-number">01</div>
+</section>
+
+<section class="section benefits">
+ <span class="eyebrow">BIZNING USTUNLIKLARIMIZ</span>
+ <h2>Nega HomeEstate?</h2>
+ <div class="benefit-grid">
+  <article><span>01</span><h3>Oson qidiruv</h3><p>Qulay filtrlar yordamida kerakli uyni tez toping.</p></article>
+  <article><span>02</span><h3>Qulay platforma</h3><p>Barcha ko'chmas mulk e'lonlari bir joyda.</p></article>
+  <article><span>03</span><h3>Tezkor aloqa</h3><p>Sotuvchi bilan bevosita bog'laning.</p></article>
+ </div>
+</section>
+</main>
+
+<footer id="contact">
+ <a class="logo light" href="#">HOME<span>ESTATE</span><small>REAL ESTATE PLATFORM</small></a>
+ <p>Orzuingizdagi uy shu yerdan boshlanadi.</p>
+ <p>© 2026 HomeEstate. Barcha huquqlar himoyalangan.</p>
+</footer>
+
+<div class="modal" id="modal">
+ <div class="modal-box">
+  <button class="close" onclick="closeModal()">×</button>
+  <span class="eyebrow">YANGI E'LON</span>
+  <h2>Uy-joyingizni joylashtiring</h2>
+  <form id="homeForm">
+   <input name="title" placeholder="Uy nomi" required>
+   <div class="form-row"><select name="type" required><option value="">Mulk turi</option><option>Kvartira</option><option>Hovli</option><option>Kottej</option></select><select name="city" required><option value="">Shahar</option><option>Toshkent</option><option>Samarqand</option><option>Buxoro</option><option>Farg'ona</option><option>Andijon</option></select></div>
+   <div class="form-row"><input name="price" type="number" placeholder="Narxi (so'm)" required><input name="rooms" type="number" placeholder="Xonalar soni" required></div>
+   <input name="area" type="number" placeholder="Maydoni (m²)" required>
+   <input name="image" placeholder="Rasm URL manzili (ixtiyoriy)">
+   <textarea name="description" placeholder="Uy haqida ma'lumot"></textarea>
+   <button class="primary-btn submit">E'lonni joylashtirish</button>
+  </form>
+ </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
